@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import { ChevronDown, Phone, ArrowRight, HelpCircle, MessageSquare } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { faqs, siteConfig } from '@/config/site';
+import { pageImages } from '@/config/images';
 
-const heroImage =
-  'https://images.pexels.com/photos/37720375/pexels-photo-37720375.jpeg?auto=compress&cs=tinysrgb&w=1600';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -20,7 +19,7 @@ export default function FAQ() {
         title="Frequently Asked Questions"
         subtitle="Answers to common questions about our lawn care and property maintenance services."
         breadcrumb="FAQ"
-        image={heroImage}
+        image={pageImages.faq.header}
       />
 
       <section className="py-20 bg-neutral-50">

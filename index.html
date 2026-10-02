@@ -3,19 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <!-- Every photo on the site is served from Pexels' CDN; opening the
-         connection before the first <img> is discovered shaves off the
-         DNS + TLS handshake that would otherwise delay it. -->
-    <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+         connection before the first image is requested saves the DNS + TLS
+         handshake. No "crossorigin" here: plain <img> requests are not
+         CORS requests, and a crossorigin preconnect opens a separate
+         connection they cannot use. -->
+    <link rel="preconnect" href="https://images.pexels.com" />
     <link rel="dns-prefetch" href="https://images.pexels.com" />
-    <!-- This app renders entirely client-side, so the browser has no way
-         to discover the homepage hero image until React mounts and inserts
-         it. Preloading it here lets it start downloading immediately,
-         in parallel with the JS bundle, instead of after. -->
+    <script>
+      // Decodes the path public/404.html encoded before redirecting here,
+      // restoring the real URL so React Router mounts on the right route.
+      // Must stay above the preload placeholder below, which reads the
+      // real path.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            })
+            .join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
+    <!-- The build replaces this with a script that preloads the top photo
+         of the page being opened (see vite.config.ts). It has to sit above
+         every stylesheet: an inline script placed after one cannot run
+         until that stylesheet has finished downloading. -->
+    <!--entry-image-preload-->
+    <!-- The Sora font is loaded without blocking rendering (it applies as
+         soon as it arrives). Importing it from inside the site stylesheet
+         instead made React, and therefore every photo, wait for it. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="preload"
-      as="image"
-      fetchpriority="high"
-      href="https://images.pexels.com/photos/8143668/pexels-photo-8143668.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -35,22 +61,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      // Decodes the path public/404.html encoded before redirecting here,
-      // restoring the real URL so React Router mounts on the right route.
-      (function (l) {
-        if (l.search[1] === '/') {
-          var decoded = l.search
-            .slice(1)
-            .split('&')
-            .map(function (s) {
-              return s.replace(/~and~/g, '&');
-            })
-            .join('?');
-          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
-        }
-      })(window.location);
-    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

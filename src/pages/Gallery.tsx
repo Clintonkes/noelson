@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, X, ZoomIn } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { galleryImages } from '@/config/site';
+import { pageImages, thumb, hero } from '@/config/images';
 
-const heroImage =
-  'https://images.pexels.com/photos/26599272/pexels-photo-26599272.jpeg?auto=compress&cs=tinysrgb&w=1600';
 const categories = ['All', 'Mowing', 'Trimming', 'Cleanup', 'Irrigation', 'Design', 'Full Service'];
 
 export default function Gallery() {
@@ -22,7 +21,7 @@ export default function Gallery() {
         title="Our Work"
         subtitle="See the quality of our lawn care and landscape management in action."
         breadcrumb="Gallery"
-        image={heroImage}
+        image={pageImages.gallery.header}
       />
 
       <section className="py-20 bg-neutral-50">
@@ -48,12 +47,15 @@ export default function Gallery() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((img, index) => (
               <div
-                key={`${img.url}-${index}`}
+                key={`${img.id}-${index}`}
                 className="group relative rounded-2xl overflow-hidden shadow-sm cursor-pointer"
-                onClick={() => setLightbox(img.url)}
+                onClick={() => setLightbox(hero(img.id))}
+                // Start fetching the full-size photo as soon as the pointer
+                // reaches the card, so the lightbox opens already loaded.
+                onPointerEnter={() => { new Image().src = hero(img.id); }}
               >
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img src={img.url} alt={img.caption} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img src={thumb(img.id)} alt={img.caption} decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                   <div>

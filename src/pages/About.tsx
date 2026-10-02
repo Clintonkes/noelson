@@ -5,13 +5,8 @@ import {
 } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { siteConfig } from '@/config/site';
+import { pageImages } from '@/config/images';
 
-const heroImage =
-  'https://images.pexels.com/photos/6794794/pexels-photo-6794794.jpeg?auto=compress&cs=tinysrgb&w=1600';
-const teamImage =
-  'https://images.pexels.com/photos/38936338/pexels-photo-38936338.jpeg?auto=compress&cs=tinysrgb&w=1200';
-const areaImage =
-  'https://images.pexels.com/photos/8143677/pexels-photo-8143677.jpeg?auto=compress&cs=tinysrgb&w=1200';
 
 const values = [
   { icon: Heart, title: 'Local Pride', description: 'We are part of the Coachella Valley community. Every property we care for reflects our pride in our home.' },
@@ -34,7 +29,7 @@ export default function About() {
         title="About S Amerix"
         subtitle="Locally owned, community-driven lawn care serving Rancho Mirage and the Coachella Valley."
         breadcrumb="About"
-        image={heroImage}
+        image={pageImages.about.header}
       />
 
       {/* Story - Text left, image right */}
@@ -71,7 +66,7 @@ export default function About() {
             </div>
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img src={teamImage} alt="S Amerix team at work" className="w-full h-[450px] object-cover" />
+                <img src={pageImages.about.team} decoding="async" alt="S Amerix team at work" className="w-full h-[450px] object-cover" />
               </div>
               <div className="absolute -top-4 -left-4 bg-gradient-to-br from-rose-500 to-rose-600 text-white rounded-2xl px-5 py-3 shadow-xl hidden md:block">
                 <p className="text-2xl font-extrabold">5+ Years</p>
@@ -151,7 +146,7 @@ export default function About() {
       <section className="py-20 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-3xl overflow-hidden shadow-xl relative">
-            <img src={areaImage} alt="Service area" className="w-full h-[400px] object-cover" />
+            <img src={pageImages.about.area} decoding="async" alt="Service area" className="w-full h-[400px] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/85 to-neutral-950/30 flex items-center">
               <div className="px-8 md:px-16 max-w-lg">
                 <h2 className="text-3xl font-extrabold text-white mb-4">Areas We Serve</h2>

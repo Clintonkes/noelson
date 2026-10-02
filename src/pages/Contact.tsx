@@ -7,9 +7,8 @@ import {
 import PageHeader from '@/components/PageHeader';
 import { siteConfig } from '@/config/site';
 import { createContact } from '@/lib/api';
+import { pageImages } from '@/config/images';
 
-const heroImage =
-  'https://images.pexels.com/photos/38936338/pexels-photo-38936338.jpeg?auto=compress&cs=tinysrgb&w=1600';
 
 const subjectOptions = [
   'General Question', 'Schedule Service', 'Billing Inquiry',
@@ -58,7 +57,7 @@ export default function Contact() {
         title="Contact Us"
         subtitle="Questions, comments, or ready to schedule? We'd love to hear from you."
         breadcrumb="Contact"
-        image={heroImage}
+        image={pageImages.contact.header}
       />
 
       {/* Contact info cards */}

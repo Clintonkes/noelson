@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
+import { highPriority } from '@/lib/preloadImages';
 
 interface PageHeaderProps {
   title: string;
@@ -15,15 +16,21 @@ export default function PageHeader({
   image,
 }: PageHeaderProps) {
   return (
-    <section
-      className="relative pt-36 pb-14 lg:pt-44 lg:pb-16 overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(rgba(23, 23, 23, 0.85), rgba(23, 23, 23, 0.6)), url(${image})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative pt-36 pb-14 lg:pt-44 lg:pb-16 overflow-hidden bg-neutral-900">
+      {/* A real <img> rather than a CSS background: browsers fetch it at
+          high priority and can match it to the preload in index.html. */}
+      <img
+        src={image}
+        alt=""
+        {...highPriority}
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div
+        className="absolute inset-0"
+        style={{ backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.85), rgba(23, 23, 23, 0.6))' }}
+      />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center gap-2 text-sm text-neutral-300 mb-4">
           <Link to="/" className="hover:text-rose-400 transition-colors">Home</Link>
           <ChevronRight className="w-4 h-4" />

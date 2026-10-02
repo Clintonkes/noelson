@@ -6,9 +6,8 @@ import {
 import PageHeader from '@/components/PageHeader';
 import { siteConfig, services } from '@/config/site';
 import { createBooking } from '@/lib/api';
+import { pageImages } from '@/config/images';
 
-const heroImage =
-  'https://images.pexels.com/photos/4162016/pexels-photo-4162016.jpeg?auto=compress&cs=tinysrgb&w=1600';
 
 const serviceOptions = [...services.map((s) => s.title), 'Multiple services', 'Full maintenance plan', 'Not sure yet'];
 const frequencyOptions = ['One-time', 'Weekly', 'Bi-weekly', 'Monthly', 'Not sure yet'];
@@ -116,7 +115,7 @@ export default function Quote() {
         title="Get a Free Quote"
         subtitle="Answer a few questions and we'll provide a customized quote — no obligation."
         breadcrumb="Quote"
-        image={heroImage}
+        image={pageImages.quote.header}
       />
 
       <section className="py-16 bg-neutral-50">

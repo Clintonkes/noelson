@@ -45,8 +45,7 @@ export const services = [
       'Weekly or bi-weekly scheduling',
       'Same professional crew every visit',
     ],
-    image:
-      'https://images.pexels.com/photos/4162016/pexels-photo-4162016.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    imageId: 4162016,
   },
   {
     slug: 'hedge-trimming',
@@ -62,8 +61,7 @@ export const services = [
       'Height and width control',
       'Complete debris cleanup',
     ],
-    image:
-      'https://images.pexels.com/photos/38936351/pexels-photo-38936351.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    imageId: 38936351,
   },
   {
     slug: 'yard-cleanup',
@@ -79,8 +77,7 @@ export const services = [
       'Branch and limb removal',
       'Full haul-away included',
     ],
-    image:
-      'https://images.pexels.com/photos/9620213/pexels-photo-9620213.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    imageId: 9620213,
   },
   {
     slug: 'irrigation',
@@ -96,8 +93,7 @@ export const services = [
       'Smart controller programming',
       'Leak detection and line repair',
     ],
-    image:
-      'https://images.pexels.com/photos/8791457/pexels-photo-8791457.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    imageId: 8791457,
   },
   {
     slug: 'landscape-design',
@@ -113,8 +109,7 @@ export const services = [
       'Landscape lighting installation',
       'Complete project management',
     ],
-    image:
-      'https://images.pexels.com/photos/26599272/pexels-photo-26599272.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    imageId: 26599272,
   },
   {
     slug: 'property-maintenance',
@@ -131,69 +126,68 @@ export const services = [
       'Priority scheduling',
       'Dedicated property manager',
     ],
-    image:
-      'https://images.pexels.com/photos/8143668/pexels-photo-8143668.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    imageId: 8143668,
   },
 ];
 
 export const galleryImages = [
   {
-    url: 'https://images.pexels.com/photos/8143668/pexels-photo-8143668.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    id: 8143668,
     caption: 'Luxury estate with manicured lawn',
     category: 'Full Service',
   },
   {
-    url: 'https://images.pexels.com/photos/4162016/pexels-photo-4162016.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    id: 4162016,
     caption: 'Precision mowing for clean, even lines',
     category: 'Mowing',
   },
   {
-    url: 'https://images.pexels.com/photos/38936351/pexels-photo-38936351.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    id: 38936351,
     caption: 'Expertly shaped hedges and shrubs',
     category: 'Trimming',
   },
   {
-    url: 'https://images.pexels.com/photos/38936338/pexels-photo-38936338.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    id: 38936338,
     caption: 'Detailed hedge trimming in progress',
     category: 'Trimming',
   },
   {
-    url: 'https://images.pexels.com/photos/9620213/pexels-photo-9620213.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    id: 9620213,
     caption: 'Leaf blowing and yard cleanup',
     category: 'Cleanup',
   },
   {
-    url: 'https://images.pexels.com/photos/29192617/pexels-photo-29192617.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    id: 29192617,
     caption: 'Raking and debris removal',
     category: 'Cleanup',
   },
   {
-    url: 'https://images.pexels.com/photos/8791457/pexels-photo-8791457.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    id: 8791457,
     caption: 'Sprinkler irrigation system in action',
     category: 'Irrigation',
   },
   {
-    url: 'https://images.pexels.com/photos/37720375/pexels-photo-37720375.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    id: 37720375,
     caption: 'Lawn sprinkler coverage check',
     category: 'Irrigation',
   },
   {
-    url: 'https://images.pexels.com/photos/26599272/pexels-photo-26599272.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    id: 26599272,
     caption: 'Garden pathway with manicured landscaping',
     category: 'Design',
   },
   {
-    url: 'https://images.pexels.com/photos/816198/pexels-photo-816198.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    id: 816198,
     caption: 'Modern home with lush lawn and palms',
     category: 'Full Service',
   },
   {
-    url: 'https://images.pexels.com/photos/6728925/pexels-photo-6728925.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    id: 6728925,
     caption: 'Professional mowing on a sunny day',
     category: 'Mowing',
   },
   {
-    url: 'https://images.pexels.com/photos/8143677/pexels-photo-8143677.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    id: 8143677,
     caption: 'Elegant property with maintained garden',
     category: 'Design',
   },

@@ -5,17 +5,13 @@ import {
 } from 'lucide-react';
 import { siteConfig, services, testimonials } from '@/config/site';
 import StarRating from '@/components/StarRating';
+import { pageImages, thumb } from '@/config/images';
+import { highPriority } from '@/lib/preloadImages';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Scissors, Shrub, Leaf, Droplets, Trees, Sparkles,
 };
 
-const heroImage =
-  'https://images.pexels.com/photos/8143668/pexels-photo-8143668.jpeg?auto=compress&cs=tinysrgb&w=1600';
-const aboutImage =
-  'https://images.pexels.com/photos/9029162/pexels-photo-9029162.jpeg?auto=compress&cs=tinysrgb&w=1200';
-const ctaImage =
-  'https://images.pexels.com/photos/816198/pexels-photo-816198.jpeg?auto=compress&cs=tinysrgb&w=1600';
 
 export default function Home() {
   return (
@@ -23,7 +19,7 @@ export default function Home() {
       {/* Hero - Full image with centered content */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Luxury estate with manicured lawn" className="w-full h-full object-cover" />
+          <img src={pageImages.home.hero} alt="Luxury estate with manicured lawn" {...highPriority} decoding="async" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/85 via-neutral-950/60 to-neutral-950/80" />
         </div>
 
@@ -105,7 +101,7 @@ export default function Home() {
                   className="group bg-white rounded-2xl overflow-hidden border border-neutral-100 hover:border-rose-200 hover:shadow-xl transition-all duration-300"
                 >
                   <div className="relative h-44 overflow-hidden">
-                    <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src={thumb(service.imageId)} alt={service.title} decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 to-transparent" />
                     <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center shadow-lg">
                       <Icon className="w-6 h-6 text-white" />
@@ -165,7 +161,7 @@ export default function Home() {
             </div>
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img src={aboutImage} alt="S Amerix lawn care professional at work" className="w-full h-[420px] object-cover" />
+                <img src={pageImages.home.about} decoding="async" alt="S Amerix lawn care professional at work" className="w-full h-[420px] object-cover" />
               </div>
               <div className="absolute -bottom-5 -right-5 bg-gradient-to-br from-rose-500 to-rose-600 text-white rounded-2xl p-5 shadow-xl hidden md:block">
                 <p className="text-3xl font-extrabold">5+</p>
@@ -242,7 +238,7 @@ export default function Home() {
       {/* CTA - Full width image */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={ctaImage} alt="Beautifully maintained property" className="w-full h-full object-cover" />
+          <img src={pageImages.home.cta} decoding="async" alt="Beautifully maintained property" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/90 to-neutral-950/60" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">

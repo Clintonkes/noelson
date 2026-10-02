@@ -5,13 +5,12 @@ import {
 } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { siteConfig, services } from '@/config/site';
+import { pageImages, feature } from '@/config/images';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Scissors, Shrub, Leaf, Droplets, Trees, Sparkles,
 };
 
-const heroImage =
-  'https://images.pexels.com/photos/38936351/pexels-photo-38936351.jpeg?auto=compress&cs=tinysrgb&w=1600';
 
 export default function Services() {
   return (
@@ -20,7 +19,7 @@ export default function Services() {
         title="Our Services"
         subtitle="Full-service lawn care and landscape management designed for the Coachella Valley."
         breadcrumb="Services"
-        image={heroImage}
+        image={pageImages.services.header}
       />
 
       {/* Services - Alternating image/text */}
@@ -34,7 +33,7 @@ export default function Services() {
                 <div key={service.slug} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                   <div className={isReversed ? 'lg:order-2' : 'lg:order-1'}>
                     <div className="rounded-2xl overflow-hidden shadow-xl relative">
-                      <img src={service.image} alt={service.title} className="w-full h-[340px] object-cover" />
+                      <img src={feature(service.imageId)} alt={service.title} decoding="async" className="w-full h-[340px] object-cover" />
                       <div className="absolute top-4 left-4 w-14 h-14 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center shadow-lg">
                         <Icon className="w-7 h-7 text-white" />
                       </div>
