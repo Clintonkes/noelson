@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: samerix-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: "8000"
+      - key: DATABASE_URL
+        sync: false
+      # Signs admin login tokens; without it the backend falls back to a
+      # default that is public in this repo.
+      - key: SECRET_KEY
+        generateValue: true
+      - key: RESEND_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      # Optional: extra allowed frontend origins, comma-separated.
+      - key: CORS_ORIGINS
+        sync: false
