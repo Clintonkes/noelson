@@ -41,10 +41,14 @@ Checks: `npm run typecheck`, `npm run lint`, `npm run build`.
 1. Repo → Settings → Secrets and variables → Actions → Variables: set `VITE_API_URL` to the Render URL.
 2. Actions → "Deploy Frontend to GitHub Pages" → Run workflow (or push to `main`).
 
-The site is then live at <https://clintonkes.github.io/Amerix/>.
+The site is live at <https://samerix.org>. The old <https://clintonkes.github.io/Amerix/> address redirects there.
 
 ### Custom domain
 
-1. Repo → Settings → Pages → Custom domain, and point the domain's DNS at GitHub Pages.
-2. Re-run the deploy workflow. The build reads the Pages configuration, so it switches from the `/Amerix/` sub-path to the domain root by itself.
-3. If the domain is not `samerix.org`, add it to `CORS_ORIGINS` on Render (e.g. `https://example.com,https://www.example.com`).
+`samerix.org` is set under Settings → Pages. DNS (Namecheap): four `A` records on `@` to GitHub's Pages IPs, and `www` as a `CNAME` to `clintonkes.github.io`.
+
+If the domain ever changes:
+
+1. Update Settings → Pages → Custom domain and the DNS records.
+2. Re-run the deploy workflow. The build reads the Pages configuration, so it picks the right base path by itself (`/Amerix/` without a domain, `/` with one).
+3. Add the new domain to `CORS_ORIGINS` on Render (e.g. `https://example.com,https://www.example.com`) and update the `og:` URLs in `index.html`.
