@@ -1,29 +1,31 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
-import About from '@/pages/About';
 import Services from '@/pages/Services';
+import About from '@/pages/About';
 import Gallery from '@/pages/Gallery';
+import Testimonials from '@/pages/Testimonials';
+import FAQ from '@/pages/FAQ';
 import Quote from '@/pages/Quote';
 import Contact from '@/pages/Contact';
-import FAQ from '@/pages/FAQ';
 
-export default function App() {
+function App() {
   return (
-    // BASE_URL is "/Amerix/" on the GitHub Pages project URL and "/" on a
-    // custom domain or in dev, so routes resolve correctly in all three.
     <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <Routes>
-        <Route element={<Layout />}>
+      <Layout>
+        <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/quote" element={<Quote />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<FAQ />} />
-        </Route>
-      </Routes>
+        </Routes>
+      </Layout>
     </BrowserRouter>
   );
 }
+
+export default App;

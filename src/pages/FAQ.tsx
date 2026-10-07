@@ -1,73 +1,85 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, Phone, ArrowRight, HelpCircle, MessageSquare } from 'lucide-react';
-import PageHeader from '@/components/PageHeader';
-import { faqs, siteConfig } from '@/config/site';
-import { pageImages } from '@/config/images';
-
+import { Plus, Minus, ArrowRight, Phone } from 'lucide-react';
+import HeroSection from '@/components/HeroSection';
+import { faqs } from '@/data/faqs';
+import { business } from '@/data/business';
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const [openId, setOpenId] = useState<string | null>(faqs[0]?.id ?? null);
 
   return (
     <div>
-      <PageHeader
+      <HeroSection
+        badge="FAQ"
         title="Frequently Asked Questions"
-        subtitle="Answers to common questions about our lawn care and property maintenance services."
-        breadcrumb="FAQ"
-        image={pageImages.faq.header}
+        subtitle="Got questions about our lawn care services? Find answers to common questions below, or reach out to us directly."
+        image="https://images.pexels.com/photos/3971211/pexels-photo-3971211.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
       />
 
-      <section className="py-20 bg-neutral-50">
+      <section className="py-24 bg-sand-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center gap-3 mb-10">
-            <HelpCircle className="w-8 h-8 text-rose-500" />
-            <h2 className="text-3xl font-extrabold text-neutral-900">Got Questions? We Have Answers</h2>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden ${
-                openIndex === index ? 'border-rose-300 shadow-lg' : 'border-neutral-100 shadow-sm hover:shadow-md'
-              }`}>
-                <button onClick={() => toggle(index)} className="w-full flex items-center justify-between gap-4 p-5 text-left">
-                  <span className="font-semibold text-neutral-900 text-base">{faq.question}</span>
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                    openIndex === index ? 'bg-rose-600 text-white rotate-180' : 'bg-neutral-100 text-neutral-600'
-                  }`}>
-                    <ChevronDown className="w-5 h-5" />
-                  </div>
-                </button>
-                <div className={`grid transition-all duration-300 ${openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
-                  <div className="overflow-hidden">
-                    <p className="px-5 pb-5 text-neutral-600 leading-relaxed text-sm">{faq.answer}</p>
+          <div className="space-y-3">
+            {faqs.map((faq) => {
+              const isOpen = openId === faq.id;
+              return (
+                <div
+                  key={faq.id}
+                  className={`rounded-2xl border transition-colors overflow-hidden ${
+                    isOpen
+                      ? 'bg-white border-clay-300 shadow-md'
+                      : 'bg-white border-sand-200 hover:border-sand-300'
+                  }`}
+                >
+                  <button
+                    onClick={() => setOpenId(isOpen ? null : faq.id)}
+                    className="w-full flex items-center justify-between gap-4 p-6 text-left"
+                  >
+                    <span className="font-bold text-olive-900 text-base lg:text-lg">
+                      {faq.question}
+                    </span>
+                    <div
+                      className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${
+                        isOpen ? 'bg-clay-500 text-white' : 'bg-sand-100 text-sand-500'
+                      }`}
+                    >
+                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                    </div>
+                  </button>
+                  <div
+                    className={`grid transition-all duration-300 ${
+                      isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="px-6 pb-6 text-sand-600 leading-relaxed">{faq.answer}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Still have questions */}
-          <div className="mt-12 bg-neutral-900 rounded-3xl p-8 text-center">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center mx-auto mb-5">
-              <MessageSquare className="w-7 h-7 text-white" />
-            </div>
-            <h3 className="text-2xl font-extrabold text-white mb-3">Still Have Questions?</h3>
-            <p className="text-neutral-300 mb-6 max-w-md mx-auto">
-              We are happy to help. Reach out and we will answer any questions you have about our services.
+          <div className="mt-16 rounded-3xl bg-olive-900 p-10 text-center">
+            <h2 className="text-2xl font-extrabold text-white mb-3">Still Have Questions?</h2>
+            <p className="text-sand-400 mb-6">
+              We're happy to help. Call us or send a message and we'll get right back to you.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href={`tel:${siteConfig.phoneRaw}`}
-                className="bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 flex items-center gap-2">
-                <Phone className="w-5 h-5" /> {siteConfig.phone}
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href={`tel:${business.phoneRaw}`}
+                className="px-7 py-3.5 rounded-xl bg-clay-500 text-white font-bold hover:bg-clay-400 transition-colors flex items-center gap-2"
+              >
+                <Phone className="w-5 h-5" />
+                {business.phone}
               </a>
-              <Link to="/contact"
-                className="border border-neutral-600 hover:border-rose-400 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 flex items-center gap-2">
-                Send a Message <ArrowRight className="w-5 h-5" />
+              <Link
+                to="/contact"
+                className="px-7 py-3.5 rounded-xl border-2 border-sand-500 text-white font-bold hover:bg-olive-800 transition-colors flex items-center gap-2"
+              >
+                Send a Message
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

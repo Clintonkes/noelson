@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: samerix-backend
+    name: noelson-backend
     runtime: docker
     dockerfilePath: ./Dockerfile
     healthCheckPath: /api/health

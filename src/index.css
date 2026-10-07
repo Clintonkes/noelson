@@ -8,7 +8,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-neutral-50 text-neutral-800 antialiased;
+    @apply bg-sand-50 text-sand-800 antialiased;
   }
 }
 

@@ -1,11 +1,16 @@
-# S Amerix LLC
+# Noelson LLC
 
-Marketing site and quote/contact backend for S Amerix LLC (lawn care, Rancho Mirage, CA).
+Marketing site and quote/contact backend for Noelson LLC (lawn care & landscaping, Palm Bay, FL).
 
 - **Frontend** — React + Vite + Tailwind, in `src/`. Deployed to GitHub Pages by `.github/workflows/frontend.yml` on every push to `main`.
 - **Backend** — FastAPI + SQLAlchemy, in `backend/`. Deployed to Render from `render.yaml` / `Dockerfile`.
 
 The quote wizard posts to `POST /api/bookings` and the contact form to `POST /api/contacts` (see `src/lib/api.ts`).
+
+## Repo & live site
+
+- **Repository:** <https://github.com/Clintonkes/noelson> (install: `git@github.com:Clintonkes/noelson.git`)
+- **Live site (GitHub Pages):** <https://clintonkes.github.io/noelson/>
 
 ## Local development
 
@@ -28,7 +33,7 @@ Checks: `npm run typecheck`, `npm run lint`, `npm run build`.
 
 ### Backend (Render)
 
-1. Render → New → Blueprint → pick this repo. It creates `samerix-backend` from `render.yaml`.
+1. Render → New → Blueprint → pick this repo. It creates `noelson-backend` from `render.yaml`.
 2. Fill in the environment variables it asks for:
    - `DATABASE_URL` — a Postgres database for this project
    - `ADMIN_EMAIL`, `ADMIN_PASSWORD` — admin login, and where contact notifications are sent
@@ -41,14 +46,12 @@ Checks: `npm run typecheck`, `npm run lint`, `npm run build`.
 1. Repo → Settings → Secrets and variables → Actions → Variables: set `VITE_API_URL` to the Render URL.
 2. Actions → "Deploy Frontend to GitHub Pages" → Run workflow (or push to `main`).
 
-The site is live at <https://samerix.org>. The old <https://clintonkes.github.io/Amerix/> address redirects there.
+The build reads GitHub's Pages configuration, so the base path is handled automatically:
+`/noelson/` on the default `clintonkes.github.io` URL, `/` once a custom domain is set.
 
 ### Custom domain
 
-`samerix.org` is set under Settings → Pages. DNS (Namecheap): four `A` records on `@` to GitHub's Pages IPs, and `www` as a `CNAME` to `clintonkes.github.io`.
+Add the domain under Repo → Settings → Pages and point its DNS at GitHub's Pages IPs (`www` as a CNAME to `clintonkes.github.io`). Then:
 
-If the domain ever changes:
-
-1. Update Settings → Pages → Custom domain and the DNS records.
-2. Re-run the deploy workflow. The build reads the Pages configuration, so it picks the right base path by itself (`/Amerix/` without a domain, `/` with one).
-3. Add the new domain to `CORS_ORIGINS` on Render (e.g. `https://example.com,https://www.example.com`) and update the `og:` URLs in `index.html`.
+1. Re-run the deploy workflow so the build picks up the new base path.
+2. Add the new domain to `CORS_ORIGINS` on Render (e.g. `https://example.com,https://www.example.com`) and update the `og:` URLs in `index.html`.

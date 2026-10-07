@@ -19,7 +19,7 @@ from email_service import (
     contact_confirmation_html, contact_admin_notification_html,
 )
 
-app = FastAPI(title="S Amerix LLC API", version="1.0.0")
+app = FastAPI(title="Noelson LLC API", version="1.0.0")
 
 origins = [
     "http://localhost:5173",
@@ -27,9 +27,7 @@ origins = [
     "http://localhost:4028",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:4028",
-    "https://samerix.org",
-    "https://www.samerix.org",
-    # GitHub Pages default URL (the site is served from /Amerix there; an
+    # GitHub Pages default URL (the site is served from /noelson there; an
     # origin has no path, so this one entry covers it).
     "https://clintonkes.github.io",
 ]
@@ -66,7 +64,7 @@ def _seed_admin():
         # guessable default.
         return
 
-    admin_email = os.getenv("ADMIN_EMAIL", "info@samerix.org")
+    admin_email = os.getenv("ADMIN_EMAIL", "noelsonllcs@proton.me")
     db = SessionLocal()
     try:
         existing = db.query(Admin).first()
@@ -119,7 +117,7 @@ def create_booking(data: BookingCreate, db: Session = Depends(get_db)):
 
     send_email(
         to_email=data.email,
-        subject=f"Your S Amerix Service Request {reference}",
+        subject=f"Your Noelson Service Request {reference}",
         html_body=booking_confirmation_html(
             name=data.name,
             reference=reference,
@@ -150,7 +148,7 @@ def create_contact(data: ContactCreate, db: Session = Depends(get_db)):
 
     send_email(
         to_email=data.email,
-        subject="Thank you for contacting S Amerix LLC",
+        subject="Thank you for contacting Noelson LLC",
         html_body=contact_confirmation_html(
             name=data.name,
             subject=data.subject,
@@ -158,7 +156,7 @@ def create_contact(data: ContactCreate, db: Session = Depends(get_db)):
         ),
     )
 
-    admin_email = os.getenv("ADMIN_EMAIL", "info@samerix.org")
+    admin_email = os.getenv("ADMIN_EMAIL", "noelsonllcs@proton.me")
     send_email(
         to_email=admin_email,
         subject=f"New Contact: {data.subject or 'No subject'}",
@@ -218,7 +216,7 @@ def update_booking_status(
 
     send_email(
         to_email=booking.email,
-        subject=f"S Amerix Service Update: {booking.reference}",
+        subject=f"Noelson Service Update: {booking.reference}",
         html_body=booking_status_html(
             name=booking.name,
             reference=booking.reference,
