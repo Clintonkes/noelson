@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
     name: 'Carlos Mendez',
     location: 'Melbourne, FL',
     rating: 5,
-    text: 'They completely redesigned our front yard with Florida-native plants and it looks incredible. The crew was professional, fast, and cleaned up perfectly. We get compliments from neighbors constantly.',
+    text: 'They completely redesigned our front yard with Florida native plants and it looks incredible. The crew was professional, fast, and cleaned up perfectly. We get compliments from neighbors constantly.',
     service: 'Landscape Design',
   },
   {
@@ -45,7 +45,7 @@ export const testimonials: Testimonial[] = [
     name: 'Tanya Richards',
     location: 'Palm Bay, FL',
     rating: 5,
-    text: 'The full-service maintenance plan is the best money I spend every month. Mowing, trimming, weed control, fertilization — all covered. My yard looks like a golf course and I never lift a finger.',
+    text: 'The full service maintenance plan is the best money I spend every month. Mowing, trimming, weed control, fertilization, all covered. My yard looks like a golf course and I never lift a finger.',
     service: 'Maintenance Plans',
   },
   {

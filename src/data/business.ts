@@ -1,7 +1,7 @@
 export const business = {
   name: 'Noelson LLC',
   tagline: 'Premium Lawn Care & Landscaping',
-  phone: '+1 321-516-4475',
+  phone: '+1 321 516 4475',
   phoneRaw: '13215164475',
   email: 'noelsonllcs@proton.me',
   address: {
@@ -12,12 +12,12 @@ export const business = {
     full: '281 Bougainvillea St NW, Palmbay, FL 32907',
   },
   hours: [
-    { day: 'Monday', time: '7:00 AM - 6:00 PM' },
-    { day: 'Tuesday', time: '7:00 AM - 6:00 PM' },
-    { day: 'Wednesday', time: '7:00 AM - 6:00 PM' },
-    { day: 'Thursday', time: '7:00 AM - 6:00 PM' },
-    { day: 'Friday', time: '7:00 AM - 6:00 PM' },
-    { day: 'Saturday', time: '8:00 AM - 4:00 PM' },
+    { day: 'Monday', time: '7:00 AM to 6:00 PM' },
+    { day: 'Tuesday', time: '7:00 AM to 6:00 PM' },
+    { day: 'Wednesday', time: '7:00 AM to 6:00 PM' },
+    { day: 'Thursday', time: '7:00 AM to 6:00 PM' },
+    { day: 'Friday', time: '7:00 AM to 6:00 PM' },
+    { day: 'Saturday', time: '8:00 AM to 4:00 PM' },
     { day: 'Sunday', time: 'Closed' },
   ],
   serviceArea: 'Palm Bay, FL and surrounding Brevard County areas',

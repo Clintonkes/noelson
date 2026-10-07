@@ -24,14 +24,14 @@ export const services: Service[] = [
     id: 'lawn-mowing',
     title: 'Lawn Mowing & Edging',
     icon: Scissors,
-    shortDescription: 'Weekly or bi-weekly mowing with precise edging for a clean finish.',
+    shortDescription: 'Weekly or biweekly mowing with precise edging for a clean finish.',
     description:
-      'Our core service keeps your lawn looking its best with regularly scheduled mowing and edging. We use commercial-grade equipment and follow Florida-specific mowing heights for St. Augustine and Bahia grasses. Every visit includes edging along walkways, driveways, and flower beds.',
+      'Our core service keeps your lawn looking its best with regularly scheduled mowing and edging. We use commercial grade equipment and follow Florida specific mowing heights for St. Augustine and Bahia grasses. Every visit includes edging along walkways, driveways, and flower beds.',
     features: [
-      'Weekly or bi-weekly schedules',
-      'Commercial-grade mowers',
+      'Weekly or biweekly schedules',
+      'Commercial grade mowers',
       'Precise edging along hardscapes',
-      'Clipping blow-off & cleanup',
+      'Clipping blow off & cleanup',
       'Florida grass height expertise',
     ],
     image: 'https://images.pexels.com/photos/6728925/pexels-photo-6728925.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -40,12 +40,12 @@ export const services: Service[] = [
     id: 'landscaping',
     title: 'Landscape Design & Installation',
     icon: Flower2,
-    shortDescription: 'Custom landscape designs with Florida-friendly plants and flowers.',
+    shortDescription: 'Custom landscape designs with Florida friendly plants and flowers.',
     description:
-      'Transform your property with a custom landscape design tailored to Florida\'s unique climate. We select and install Florida-friendly plants, palms, shrubs, and flowers that thrive in Brevard County. From garden beds to full yard makeovers, we bring your vision to life.',
+      'Transform your property with a custom landscape design tailored to Florida\'s unique climate. We select and install Florida friendly plants, palms, shrubs, and flowers that thrive in Brevard County. From garden beds to full yard makeovers, we bring your vision to life.',
     features: [
       'Custom landscape design',
-      'Florida-native plant selection',
+      'Florida native plant selection',
       'Garden bed installation',
       'Mulch & rock installation',
       'Tropical plant expertise',
@@ -90,7 +90,7 @@ export const services: Service[] = [
     icon: Sparkles,
     shortDescription: 'Keep hedges and shrubs shaped, healthy, and looking great.',
     description:
-      'Regular trimming keeps your hedges, shrubs, and bushes neat while promoting healthy growth. We shape and prune all types of Florida ornamentals, creating clean lines and well-maintained borders that enhance your property\'s curb appeal.',
+      'Regular trimming keeps your hedges, shrubs, and bushes neat while promoting healthy growth. We shape and prune all types of Florida ornamentals, creating clean lines and well maintained borders that enhance your property\'s curb appeal.',
     features: [
       'Hedge shaping & pruning',
       'Shrub & bush maintenance',
@@ -112,7 +112,7 @@ export const services: Service[] = [
       'Insect & pest treatment',
       'Fungus & disease management',
       'Fertilization programs',
-      'Safe, EPA-approved products',
+      'Safe, EPA approved products',
     ],
     image: 'https://images.pexels.com/photos/4894608/pexels-photo-4894608.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   },
@@ -134,11 +134,11 @@ export const services: Service[] = [
   },
   {
     id: 'maintenance-plans',
-    title: 'Full-Service Maintenance Plans',
+    title: 'Full Service Maintenance Plans',
     icon: Wrench,
-    shortDescription: 'All-inclusive monthly plans that cover everything.',
+    shortDescription: 'All inclusive monthly plans that cover everything.',
     description:
-      'Take the hassle out of lawn care with our full-service maintenance plans. We bundle mowing, trimming, weed control, fertilization, and irrigation checks into one affordable monthly package. You\'ll never have to worry about your yard again.',
+      'Take the hassle out of lawn care with our full service maintenance plans. We bundle mowing, trimming, weed control, fertilization, and irrigation checks into one affordable monthly package. You\'ll never have to worry about your yard again.',
     features: [
       'Mowing & edging included',
       'Hedge & shrub trimming',

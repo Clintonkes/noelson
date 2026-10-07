@@ -45,35 +45,35 @@ export default function Contact() {
           <div className="grid sm:grid-cols-3 gap-6">
             <a
               href={`tel:${business.phoneRaw}`}
-              className="group flex flex-col items-center text-center p-8 rounded-2xl border-2 border-sand-200 hover:border-clay-400 transition-colors"
+              className="group flex flex-col items-center text-center p-8 rounded-2xl border-2 border-sand-200 hover:border-gold-400 transition-colors"
             >
-              <div className="w-14 h-14 rounded-2xl bg-olive-700 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+              <div className="w-14 h-14 rounded-2xl bg-ocean-700 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                 <Phone className="w-7 h-7 text-white" strokeWidth={2} />
               </div>
-              <h3 className="font-extrabold text-olive-900 text-lg mb-1">Call Us</h3>
+              <h3 className="font-extrabold text-ocean-900 text-lg mb-1">Call Us</h3>
               <p className="text-sand-500 text-sm mb-2">Fastest response</p>
-              <p className="text-clay-500 font-bold">{business.phone}</p>
+              <p className="text-gold-500 font-bold">{business.phone}</p>
             </a>
 
             <a
               href={`mailto:${business.email}`}
-              className="group flex flex-col items-center text-center p-8 rounded-2xl border-2 border-sand-200 hover:border-clay-400 transition-colors"
+              className="group flex flex-col items-center text-center p-8 rounded-2xl border-2 border-sand-200 hover:border-gold-400 transition-colors"
             >
-              <div className="w-14 h-14 rounded-2xl bg-olive-700 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+              <div className="w-14 h-14 rounded-2xl bg-ocean-700 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                 <Mail className="w-7 h-7 text-white" strokeWidth={2} />
               </div>
-              <h3 className="font-extrabold text-olive-900 text-lg mb-1">Email Us</h3>
+              <h3 className="font-extrabold text-ocean-900 text-lg mb-1">Email Us</h3>
               <p className="text-sand-500 text-sm mb-2">We reply within 24 hours</p>
-              <p className="text-clay-500 font-bold text-sm break-all">{business.email}</p>
+              <p className="text-gold-500 font-bold text-sm break-all">{business.email}</p>
             </a>
 
             <div className="flex flex-col items-center text-center p-8 rounded-2xl border-2 border-sand-200">
-              <div className="w-14 h-14 rounded-2xl bg-olive-700 flex items-center justify-center mb-4">
+              <div className="w-14 h-14 rounded-2xl bg-ocean-700 flex items-center justify-center mb-4">
                 <MapPin className="w-7 h-7 text-white" strokeWidth={2} />
               </div>
-              <h3 className="font-extrabold text-olive-900 text-lg mb-1">Visit Us</h3>
+              <h3 className="font-extrabold text-ocean-900 text-lg mb-1">Visit Us</h3>
               <p className="text-sand-500 text-sm mb-2">{business.address.city}, {business.address.state}</p>
-              <p className="text-clay-500 font-bold text-sm">{business.address.full}</p>
+              <p className="text-gold-500 font-bold text-sm">{business.address.full}</p>
             </div>
           </div>
         </div>
@@ -88,10 +88,10 @@ export default function Contact() {
               <div className="rounded-3xl bg-white border border-sand-200 p-8 lg:p-10 shadow-sm">
                 {submitted ? (
                   <div className="text-center py-12">
-                    <div className="w-20 h-20 rounded-full bg-clay-500 flex items-center justify-center mx-auto mb-6">
+                    <div className="w-20 h-20 rounded-full bg-gold-500 flex items-center justify-center mx-auto mb-6">
                       <Check className="w-10 h-10 text-white" strokeWidth={2.5} />
                     </div>
-                    <h2 className="text-2xl font-extrabold text-olive-900 mb-3">Message Sent!</h2>
+                    <h2 className="text-2xl font-extrabold text-ocean-900 mb-3">Message Sent!</h2>
                     <p className="text-sand-600 mb-6">
                       Thanks for reaching out, {form.name}. We'll get back to you shortly.
                     </p>
@@ -101,7 +101,7 @@ export default function Contact() {
                         setError('');
                         setForm({ name: '', email: '', subject: '', message: '' });
                       }}
-                      className="px-6 py-3 rounded-xl border-2 border-olive-700 text-olive-800 font-bold hover:bg-olive-50 transition-colors"
+                      className="px-6 py-3 rounded-xl border-2 border-ocean-700 text-ocean-800 font-bold hover:bg-ocean-50 transition-colors"
                     >
                       Send Another Message
                     </button>
@@ -109,10 +109,10 @@ export default function Contact() {
                 ) : (
                   <>
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="w-10 h-10 rounded-xl bg-olive-100 flex items-center justify-center">
-                        <MessageSquare className="w-5 h-5 text-olive-700" />
+                      <div className="w-10 h-10 rounded-xl bg-ocean-100 flex items-center justify-center">
+                        <MessageSquare className="w-5 h-5 text-ocean-700" />
                       </div>
-                      <h2 className="text-xl font-extrabold text-olive-900">Send Us a Message</h2>
+                      <h2 className="text-xl font-extrabold text-ocean-900">Send Us a Message</h2>
                     </div>
                     <p className="text-sm text-sand-500 mb-6">
                       Have a question or comment? Fill out the form and we'll respond as soon as possible.
@@ -130,7 +130,7 @@ export default function Contact() {
                             required
                             value={form.name}
                             onChange={(e) => setForm({ ...form, name: e.target.value })}
-                            className="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-sand-200 text-sm focus:border-clay-400 focus:outline-none transition-colors"
+                            className="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-sand-200 text-sm focus:border-gold-400 focus:outline-none transition-colors"
                             placeholder="John Smith"
                           />
                         </div>
@@ -147,7 +147,7 @@ export default function Contact() {
                             required
                             value={form.email}
                             onChange={(e) => setForm({ ...form, email: e.target.value })}
-                            className="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-sand-200 text-sm focus:border-clay-400 focus:outline-none transition-colors"
+                            className="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-sand-200 text-sm focus:border-gold-400 focus:outline-none transition-colors"
                             placeholder="john@email.com"
                           />
                         </div>
@@ -161,7 +161,7 @@ export default function Contact() {
                           required
                           value={form.subject}
                           onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border-2 border-sand-200 text-sm text-sand-700 focus:border-clay-400 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-xl border-2 border-sand-200 text-sm text-sand-700 focus:border-gold-400 focus:outline-none transition-colors"
                         >
                           <option value="">Choose a topic...</option>
                           <option value="General Question">General Question</option>
@@ -183,7 +183,7 @@ export default function Contact() {
                           value={form.message}
                           onChange={(e) => setForm({ ...form, message: e.target.value })}
                           rows={5}
-                          className="w-full px-4 py-3 rounded-xl border-2 border-sand-200 text-sm focus:border-clay-400 focus:outline-none transition-colors resize-none"
+                          className="w-full px-4 py-3 rounded-xl border-2 border-sand-200 text-sm focus:border-gold-400 focus:outline-none transition-colors resize-none"
                           placeholder="Type your message here..."
                         />
                       </div>
@@ -191,7 +191,7 @@ export default function Contact() {
                       <button
                         type="submit"
                         disabled={submitting}
-                        className="w-full px-6 py-4 rounded-xl bg-olive-800 text-white font-bold hover:bg-olive-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="w-full px-6 py-4 rounded-xl bg-ocean-800 text-white font-bold hover:bg-ocean-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                       >
                         {submitting ? (
                           <>
@@ -207,9 +207,9 @@ export default function Contact() {
                       </button>
 
                       {error && (
-                        <div className="flex items-start gap-3 rounded-xl bg-clay-50 border border-clay-200 p-4">
-                          <AlertCircle className="w-5 h-5 text-clay-600 flex-shrink-0 mt-0.5" />
-                          <p className="text-sm text-clay-800 font-medium">{error}</p>
+                        <div className="flex items-start gap-3 rounded-xl bg-gold-50 border border-gold-200 p-4">
+                          <AlertCircle className="w-5 h-5 text-gold-600 flex-shrink-0 mt-0.5" />
+                          <p className="text-sm text-gold-800 font-medium">{error}</p>
                         </div>
                       )}
                     </form>
@@ -221,9 +221,9 @@ export default function Contact() {
             {/* Right Sidebar */}
             <div className="lg:col-span-2 space-y-6">
               {/* Hours */}
-              <div className="rounded-2xl bg-olive-900 p-6">
+              <div className="rounded-2xl bg-ocean-900 p-6">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-clay-500 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-gold-500 flex items-center justify-center">
                     <Clock className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-white font-bold text-lg">Business Hours</h3>
@@ -232,7 +232,7 @@ export default function Contact() {
                   {business.hours.map((h) => (
                     <li key={h.day} className="flex justify-between text-sm items-center">
                       <span className="text-sand-400">{h.day}</span>
-                      <span className={`font-bold ${h.time === 'Closed' ? 'text-red-300' : 'text-clay-400'}`}>
+                      <span className={`font-bold ${h.time === 'Closed' ? 'text-red-300' : 'text-gold-400'}`}>
                         {h.time}
                       </span>
                     </li>
@@ -243,10 +243,10 @@ export default function Contact() {
               {/* Map */}
               <div className="rounded-2xl bg-white border border-sand-200 p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-clay-500 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-gold-500 flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="font-bold text-olive-900 text-lg">Find Us</h3>
+                  <h3 className="font-bold text-ocean-900 text-lg">Find Us</h3>
                 </div>
                 <div className="rounded-xl overflow-hidden border border-sand-200 mb-4">
                   <iframe
@@ -260,7 +260,7 @@ export default function Contact() {
                   href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(business.address.full)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-clay-500 hover:text-clay-600 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-gold-500 hover:text-gold-600 transition-colors"
                 >
                   <Navigation className="w-4 h-4" />
                   Get Directions
@@ -268,14 +268,14 @@ export default function Contact() {
               </div>
 
               {/* Quote CTA */}
-              <div className="rounded-2xl bg-clay-50 border border-clay-200 p-6">
-                <h3 className="font-bold text-olive-900 text-lg mb-2">Looking for a Price?</h3>
+              <div className="rounded-2xl bg-gold-50 border border-gold-200 p-6">
+                <h3 className="font-bold text-ocean-900 text-lg mb-2">Looking for a Price?</h3>
                 <p className="text-sm text-sand-600 mb-4">
                   If you're ready for a free estimate, our quote form is the fastest way to get one.
                 </p>
                 <Link
                   to="/quote"
-                  className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-clay-500 text-white font-bold hover:bg-clay-400 transition-colors"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-gold-500 text-white font-bold hover:bg-gold-400 transition-colors"
                 >
                   Request a Free Quote
                 </Link>

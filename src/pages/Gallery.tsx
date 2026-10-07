@@ -31,8 +31,8 @@ export default function Gallery() {
                 onClick={() => setFilter(cat)}
                 className={`px-4 py-2 rounded-lg text-sm font-bold transition-colors ${
                   filter === cat
-                    ? 'bg-olive-800 text-white'
-                    : 'bg-white border border-sand-200 text-sand-600 hover:border-clay-400 hover:text-clay-500'
+                    ? 'bg-ocean-800 text-white'
+                    : 'bg-white border border-sand-200 text-sand-600 hover:border-gold-400 hover:text-gold-500'
                 }`}
               >
                 {cat}
@@ -53,9 +53,9 @@ export default function Gallery() {
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-olive-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ocean-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 text-left translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <span className="inline-block px-2.5 py-1 rounded-lg bg-clay-500 text-white text-xs font-bold mb-2">
+                  <span className="inline-block px-2.5 py-1 rounded-lg bg-gold-500 text-white text-xs font-bold mb-2">
                     {item.category}
                   </span>
                   <h3 className="text-white font-bold text-lg">{item.title}</h3>
@@ -71,7 +71,7 @@ export default function Gallery() {
             </p>
             <Link
               to="/quote"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-clay-500 text-white font-bold hover:bg-clay-400 transition-colors"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gold-500 text-white font-bold hover:bg-gold-400 transition-colors"
             >
               Start Your Project
               <ArrowRight className="w-5 h-5" />
@@ -83,11 +83,11 @@ export default function Gallery() {
       {/* Lightbox */}
       {lightbox && (
         <div
-          className="fixed inset-0 z-[60] bg-olive-950/90 flex items-center justify-center p-4"
+          className="fixed inset-0 z-[60] bg-ocean-950/90 flex items-center justify-center p-4"
           onClick={() => setLightbox(null)}
         >
           <button
-            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-olive-800 text-white flex items-center justify-center hover:bg-olive-700 transition-colors"
+            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-ocean-800 text-white flex items-center justify-center hover:bg-ocean-700 transition-colors"
             onClick={() => setLightbox(null)}
           >
             <X className="w-6 h-6" />

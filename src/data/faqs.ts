@@ -13,12 +13,12 @@ export const faqs: FAQ[] = [
   {
     id: '2',
     question: 'How often should my lawn be mowed in Florida?',
-    answer: 'During Florida\'s hot growing season (April through October), weekly mowing is recommended for St. Augustine and other warm-season grasses. In the cooler months, bi-weekly is usually enough. We\'ll help you set the right schedule.',
+    answer: 'During Florida\'s hot growing season (April through October), weekly mowing is recommended for St. Augustine and other warm season grasses. In the cooler months, biweekly is usually enough. We\'ll help you set the right schedule.',
   },
   {
     id: '3',
     question: 'Do you offer free estimates?',
-    answer: 'Yes! Every estimate is completely free with no obligation. We\'ll assess your property and provide a detailed quote for any service you need, whether it\'s a one-time cleanup or ongoing maintenance.',
+    answer: 'Yes! Every estimate is completely free with no obligation. We\'ll assess your property and provide a detailed quote for any service you need, whether it\'s a one time cleanup or ongoing maintenance.',
   },
   {
     id: '4',
@@ -33,12 +33,12 @@ export const faqs: FAQ[] = [
   {
     id: '6',
     question: 'Do you offer monthly maintenance contracts?',
-    answer: 'Yes! Our full-service maintenance plans bundle mowing, trimming, weed control, fertilization, and irrigation checks into one monthly fee. Plans include priority scheduling and priority storm cleanup service.',
+    answer: 'Yes! Our full service maintenance plans bundle mowing, trimming, weed control, fertilization, and irrigation checks into one monthly fee. Plans include priority scheduling and priority storm cleanup service.',
   },
   {
     id: '7',
     question: 'How do you handle storm cleanup?',
-    answer: 'Florida storms can leave yards covered in debris. We offer rapid-response storm cleanup for both regular customers and new clients. Maintenance plan customers get priority scheduling after storms.',
+    answer: 'Florida storms can leave yards covered in debris. We offer rapid response storm cleanup for both regular customers and new clients. Maintenance plan customers get priority scheduling after storms.',
   },
   {
     id: '8',
@@ -48,7 +48,7 @@ export const faqs: FAQ[] = [
   {
     id: '9',
     question: 'What payment methods do you accept?',
-    answer: 'We accept cash, check, and all major credit cards. For maintenance plan customers, we offer convenient monthly auto-pay. One-time services are due upon completion unless other arrangements are made.',
+    answer: 'We accept cash, check, and all major credit cards. For maintenance plan customers, we offer convenient monthly auto pay. One time services are due upon completion unless other arrangements are made.',
   },
   {
     id: '10',

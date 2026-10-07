@@ -27,7 +27,7 @@ export default function FAQ() {
                   key={faq.id}
                   className={`rounded-2xl border transition-colors overflow-hidden ${
                     isOpen
-                      ? 'bg-white border-clay-300 shadow-md'
+                      ? 'bg-white border-gold-300 shadow-md'
                       : 'bg-white border-sand-200 hover:border-sand-300'
                   }`}
                 >
@@ -35,12 +35,12 @@ export default function FAQ() {
                     onClick={() => setOpenId(isOpen ? null : faq.id)}
                     className="w-full flex items-center justify-between gap-4 p-6 text-left"
                   >
-                    <span className="font-bold text-olive-900 text-base lg:text-lg">
+                    <span className="font-bold text-ocean-900 text-base lg:text-lg">
                       {faq.question}
                     </span>
                     <div
                       className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${
-                        isOpen ? 'bg-clay-500 text-white' : 'bg-sand-100 text-sand-500'
+                        isOpen ? 'bg-gold-500 text-white' : 'bg-sand-100 text-sand-500'
                       }`}
                     >
                       {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
@@ -61,7 +61,7 @@ export default function FAQ() {
           </div>
 
           {/* Still have questions */}
-          <div className="mt-16 rounded-3xl bg-olive-900 p-10 text-center">
+          <div className="mt-16 rounded-3xl bg-ocean-900 p-10 text-center">
             <h2 className="text-2xl font-extrabold text-white mb-3">Still Have Questions?</h2>
             <p className="text-sand-400 mb-6">
               We're happy to help. Call us or send a message and we'll get right back to you.
@@ -69,14 +69,14 @@ export default function FAQ() {
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={`tel:${business.phoneRaw}`}
-                className="px-7 py-3.5 rounded-xl bg-clay-500 text-white font-bold hover:bg-clay-400 transition-colors flex items-center gap-2"
+                className="px-7 py-3.5 rounded-xl bg-gold-500 text-white font-bold hover:bg-gold-400 transition-colors flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
                 {business.phone}
               </a>
               <Link
                 to="/contact"
-                className="px-7 py-3.5 rounded-xl border-2 border-sand-500 text-white font-bold hover:bg-olive-800 transition-colors flex items-center gap-2"
+                className="px-7 py-3.5 rounded-xl border-2 border-sand-500 text-white font-bold hover:bg-ocean-800 transition-colors flex items-center gap-2"
               >
                 Send a Message
                 <ArrowRight className="w-4 h-4" />
