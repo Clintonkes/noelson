@@ -18,7 +18,7 @@ export const feature = (id: number) => pexels(id, 'w=1200');
 export const thumb = (id: number) => pexels(id, 'w=800');
 
 export const pageImages = {
-  home: { hero: hero(8143668), about: feature(9029162), cta: banner(816198) },
+  home: { hero: hero(31732617), about: feature(9029162), cta: banner(816198) },
   about: { header: banner(6794794), team: feature(38936338), area: banner(8143677) },
   services: { header: banner(38936351) },
   gallery: { header: banner(26599272) },
