@@ -3,6 +3,7 @@ import { Check, ArrowRight, Phone, Sprout } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import { services } from '@/data/services';
 import { business } from '@/data/business';
+import { pageImages } from '@/config/images';
 
 export default function Services() {
   return (
@@ -11,7 +12,7 @@ export default function Services() {
         badge="Our Services"
         title="Complete Lawn Care Services"
         subtitle="From weekly mowing to full landscape design, we handle everything your Florida property needs to look its best."
-        image="https://images.pexels.com/photos/4162016/pexels-photo-4162016.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+        image={pageImages.services.header}
       />
 
       {/* Services - Alternating Layout */}

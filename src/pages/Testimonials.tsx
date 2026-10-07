@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Star, ArrowRight, Quote } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import { testimonials } from '@/data/testimonials';
+import { pageImages } from '@/config/images';
 
 export default function Testimonials() {
   const avgRating = testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length;
@@ -12,7 +13,7 @@ export default function Testimonials() {
         badge="Reviews"
         title="What Our Customers Say"
         subtitle="Real reviews from real Brevard County homeowners. See why Palm Bay trusts Noelson LLC with their lawn care."
-        image="https://images.pexels.com/photos/18559625/pexels-photo-18559625.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+        image={pageImages.testimonials.header}
       />
 
       {/* Rating Summary */}

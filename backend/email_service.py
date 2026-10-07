@@ -59,15 +59,15 @@ def booking_confirmation_html(name: str, reference: str, address: str, service: 
         <style>
             body {{ font-family: 'Helvetica Neue', Arial, sans-serif; background: #f9f8f4; margin: 0; padding: 40px; }}
             .container {{ max-width: 600px; margin: 0 auto; background: white; border: 1px solid #e5e5e5; }}
-            .header {{ background: #171717; padding: 40px; text-align: center; }}
+            .header {{ background: #0e2540; padding: 40px; text-align: center; }}
             .header h1 {{ color: #F9F8F4; font-size: 28px; font-weight: 300; letter-spacing: 4px; margin: 0; }}
-            .header p {{ color: #e11d48; font-size: 11px; letter-spacing: 3px; margin-top: 8px; }}
+            .header p {{ color: #c98c33; font-size: 11px; letter-spacing: 3px; margin-top: 8px; }}
             .body {{ padding: 40px; }}
-            .body h2 {{ color: #171717; font-size: 22px; font-weight: 300; margin-bottom: 20px; }}
+            .body h2 {{ color: #0e2540; font-size: 22px; font-weight: 300; margin-bottom: 20px; }}
             .body p {{ color: #555; line-height: 1.7; font-size: 15px; }}
-            .details {{ background: #f9f8f4; padding: 24px; margin: 24px 0; border-left: 3px solid #e11d48; }}
-            .details p {{ margin: 8px 0; font-size: 14px; color: #171717; }}
-            .details strong {{ color: #171717; }}
+            .details {{ background: #f9f8f4; padding: 24px; margin: 24px 0; border-left: 3px solid #c98c33; }}
+            .details p {{ margin: 8px 0; font-size: 14px; color: #0e2540; }}
+            .details strong {{ color: #0e2540; }}
             .ref {{ font-family: 'Courier New', monospace; font-size: 12px; color: #999; text-align: center; margin-top: 30px; letter-spacing: 2px; }}
             .footer {{ padding: 30px 40px; border-top: 1px solid #eee; text-align: center; }}
             .footer p {{ font-size: 12px; color: #999; margin: 4px 0; }}
@@ -76,8 +76,8 @@ def booking_confirmation_html(name: str, reference: str, address: str, service: 
     <body>
         <div class="container">
             <div class="header">
-                <h1>NOELSON LAWN CARE</h1>
-                <p>PROFESSIONAL LAWN CARE</p>
+                <h1>NOELSON LLC</h1>
+                <p>LAWN CARE & LANDSCAPING</p>
             </div>
             <div class="body">
                 <h2>Thank you, {name}.</h2>
@@ -115,13 +115,13 @@ def booking_status_html(name: str, reference: str, status: str, address: str) ->
     }
 
     status_colors = {
-        "approved": "#e11d48",
+        "approved": "#c98c33",
         "cancelled": "#c0392b",
-        "completed": "#171717",
+        "completed": "#0e2540",
     }
 
     message = status_messages.get(status, f"Your request status has been updated to {display_status}.")
-    color = status_colors.get(status, "#171717")
+    color = status_colors.get(status, "#0e2540")
 
     return f"""
     <!DOCTYPE html>
@@ -130,16 +130,16 @@ def booking_status_html(name: str, reference: str, status: str, address: str) ->
         <style>
             body {{ font-family: 'Helvetica Neue', Arial, sans-serif; background: #f9f8f4; margin: 0; padding: 40px; }}
             .container {{ max-width: 600px; margin: 0 auto; background: white; border: 1px solid #e5e5e5; }}
-            .header {{ background: #171717; padding: 40px; text-align: center; }}
+            .header {{ background: #0e2540; padding: 40px; text-align: center; }}
             .header h1 {{ color: #F9F8F4; font-size: 28px; font-weight: 300; letter-spacing: 4px; margin: 0; }}
-            .header p {{ color: #e11d48; font-size: 11px; letter-spacing: 3px; margin-top: 8px; }}
+            .header p {{ color: #c98c33; font-size: 11px; letter-spacing: 3px; margin-top: 8px; }}
             .body {{ padding: 40px; }}
-            .body h2 {{ color: #171717; font-size: 22px; font-weight: 300; margin-bottom: 20px; }}
+            .body h2 {{ color: #0e2540; font-size: 22px; font-weight: 300; margin-bottom: 20px; }}
             .body p {{ color: #555; line-height: 1.7; font-size: 15px; }}
             .status-badge {{ display: inline-block; padding: 8px 20px; background: {color}; color: white; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin: 16px 0; }}
-            .details {{ background: #f9f8f4; padding: 24px; margin: 24px 0; border-left: 3px solid #e11d48; }}
-            .details p {{ margin: 8px 0; font-size: 14px; color: #171717; }}
-            .details strong {{ color: #171717; }}
+            .details {{ background: #f9f8f4; padding: 24px; margin: 24px 0; border-left: 3px solid #c98c33; }}
+            .details p {{ margin: 8px 0; font-size: 14px; color: #0e2540; }}
+            .details strong {{ color: #0e2540; }}
             .ref {{ font-family: 'Courier New', monospace; font-size: 12px; color: #999; text-align: center; margin-top: 30px; letter-spacing: 2px; }}
             .footer {{ padding: 30px 40px; border-top: 1px solid #eee; text-align: center; }}
             .footer p {{ font-size: 12px; color: #999; margin: 4px 0; }}
@@ -148,8 +148,8 @@ def booking_status_html(name: str, reference: str, status: str, address: str) ->
     <body>
         <div class="container">
             <div class="header">
-                <h1>NOELSON LAWN CARE</h1>
-                <p>PROFESSIONAL LAWN CARE</p>
+                <h1>NOELSON LLC</h1>
+                <p>LAWN CARE & LANDSCAPING</p>
             </div>
             <div class="body">
                 <h2>Hello, {name}.</h2>
@@ -179,14 +179,14 @@ def contact_confirmation_html(name: str, subject: str, message: str) -> str:
         <style>
             body {{ font-family: 'Helvetica Neue', Arial, sans-serif; background: #f9f8f4; margin: 0; padding: 40px; }}
             .container {{ max-width: 600px; margin: 0 auto; background: white; border: 1px solid #e5e5e5; }}
-            .header {{ background: #171717; padding: 40px; text-align: center; }}
+            .header {{ background: #0e2540; padding: 40px; text-align: center; }}
             .header h1 {{ color: #F9F8F4; font-size: 28px; font-weight: 300; letter-spacing: 4px; margin: 0; }}
-            .header p {{ color: #e11d48; font-size: 11px; letter-spacing: 3px; margin-top: 8px; }}
+            .header p {{ color: #c98c33; font-size: 11px; letter-spacing: 3px; margin-top: 8px; }}
             .body {{ padding: 40px; }}
-            .body h2 {{ color: #171717; font-size: 22px; font-weight: 300; margin-bottom: 20px; }}
+            .body h2 {{ color: #0e2540; font-size: 22px; font-weight: 300; margin-bottom: 20px; }}
             .body p {{ color: #555; line-height: 1.7; font-size: 15px; }}
-            .message-box {{ background: #f9f8f4; padding: 24px; margin: 24px 0; border-left: 3px solid #e11d48; }}
-            .message-box p {{ margin: 8px 0; font-size: 14px; color: #171717; }}
+            .message-box {{ background: #f9f8f4; padding: 24px; margin: 24px 0; border-left: 3px solid #c98c33; }}
+            .message-box p {{ margin: 8px 0; font-size: 14px; color: #0e2540; }}
             .footer {{ padding: 30px 40px; border-top: 1px solid #eee; text-align: center; }}
             .footer p {{ font-size: 12px; color: #999; margin: 4px 0; }}
         </style>
@@ -194,8 +194,8 @@ def contact_confirmation_html(name: str, subject: str, message: str) -> str:
     <body>
         <div class="container">
             <div class="header">
-                <h1>NOELSON LAWN CARE</h1>
-                <p>PROFESSIONAL LAWN CARE</p>
+                <h1>NOELSON LLC</h1>
+                <p>LAWN CARE & LANDSCAPING</p>
             </div>
             <div class="body">
                 <h2>Thank you, {name}.</h2>
@@ -223,14 +223,14 @@ def contact_admin_notification_html(name: str, email: str, subject: str, message
         <style>
             body {{ font-family: 'Helvetica Neue', Arial, sans-serif; background: #f9f8f4; margin: 0; padding: 40px; }}
             .container {{ max-width: 600px; margin: 0 auto; background: white; border: 1px solid #e5e5e5; }}
-            .header {{ background: #171717; padding: 40px; text-align: center; }}
+            .header {{ background: #0e2540; padding: 40px; text-align: center; }}
             .header h1 {{ color: #F9F8F4; font-size: 28px; font-weight: 300; letter-spacing: 4px; margin: 0; }}
-            .header p {{ color: #e11d48; font-size: 11px; letter-spacing: 3px; margin-top: 8px; }}
+            .header p {{ color: #c98c33; font-size: 11px; letter-spacing: 3px; margin-top: 8px; }}
             .body {{ padding: 40px; }}
-            .body h2 {{ color: #171717; font-size: 22px; font-weight: 300; margin-bottom: 20px; }}
+            .body h2 {{ color: #0e2540; font-size: 22px; font-weight: 300; margin-bottom: 20px; }}
             .body p {{ color: #555; line-height: 1.7; font-size: 15px; }}
-            .details {{ background: #f9f8f4; padding: 24px; margin: 24px 0; border-left: 3px solid #e11d48; }}
-            .details p {{ margin: 8px 0; font-size: 14px; color: #171717; }}
+            .details {{ background: #f9f8f4; padding: 24px; margin: 24px 0; border-left: 3px solid #c98c33; }}
+            .details p {{ margin: 8px 0; font-size: 14px; color: #0e2540; }}
             .footer {{ padding: 30px 40px; border-top: 1px solid #eee; text-align: center; }}
             .footer p {{ font-size: 12px; color: #999; margin: 4px 0; }}
         </style>

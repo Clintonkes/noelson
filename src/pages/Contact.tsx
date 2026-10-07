@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import HeroSection from '@/components/HeroSection';
 import { createContact } from '@/lib/api';
 import { business } from '@/data/business';
+import { pageImages } from '@/config/images';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -36,7 +37,7 @@ export default function Contact() {
         badge="Contact Us"
         title="We're Here to Help"
         subtitle="Questions about our services? Need to schedule something? Reach out and we'll get back to you fast."
-        image="https://images.pexels.com/photos/4469146/pexels-photo-4469146.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+        image={pageImages.contact.header}
       />
 
       {/* Contact Cards */}

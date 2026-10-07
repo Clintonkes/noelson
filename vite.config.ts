@@ -23,9 +23,9 @@ function preloadEntryImage(): Plugin {
       const script =
         `(function(){var m=${JSON.stringify(entryImages)},b=${JSON.stringify(base)},p=location.pathname;` +
         `if(p.indexOf(b)===0)p='/'+p.slice(b.length);p=p.replace(/\\/+$/,'')||'/';` +
-        `var u=m[p];if(!u)return;var l=document.createElement('link');` +
-        `l.rel='preload';l.as='image';l.href=u;l.setAttribute('fetchpriority','high');` +
-        `document.head.appendChild(l);})();`;
+        `var u=m[p];if(!u)return;for(var i=0;i<u.length;i++){var l=document.createElement('link');` +
+        `l.rel='preload';l.as='image';l.href=u[i];l.setAttribute('fetchpriority','high');` +
+        `document.head.appendChild(l);}})();`;
       return html.replace(PLACEHOLDER, `<script>${script}</script>`);
     },
   };

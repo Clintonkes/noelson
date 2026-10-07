@@ -4,6 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import { createBooking } from '@/lib/api';
 import { services } from '@/data/services';
 import { business } from '@/data/business';
+import { pageImages } from '@/config/images';
 
 export default function Quote() {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
@@ -67,7 +68,7 @@ export default function Quote() {
           badge="Quote Request"
           title="Request a Free Estimate"
           subtitle="Fill out the form below and we'll get back to you within 24 hours with a detailed quote."
-          image="https://images.pexels.com/photos/37554739/pexels-photo-37554739.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          image={pageImages.quote.header}
         />
         <section className="py-24 bg-sand-50">
           <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -123,7 +124,7 @@ export default function Quote() {
         badge="Free Estimate"
         title="Request a Free Estimate"
         subtitle="Tell us about your property and what you need. We'll provide a detailed, no obligation quote within 24 hours."
-        image="https://images.pexels.com/photos/37554739/pexels-photo-37554739.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+        image={pageImages.quote.header}
       />
 
       <section className="py-20 bg-sand-50">

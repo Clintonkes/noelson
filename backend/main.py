@@ -84,7 +84,7 @@ def _seed_admin():
 def _generate_reference():
     ts = str(int(time.time()))[-6:]
     rand = "".join(random.choices(string.digits, k=3))
-    return f"SA-{ts}{rand}"
+    return f"NL-{ts}{rand}"
 
 
 # ── Public Endpoints ──────────────────────────────────────────────

@@ -4,6 +4,7 @@ import { Plus, Minus, ArrowRight, Phone } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import { faqs } from '@/data/faqs';
 import { business } from '@/data/business';
+import { pageImages } from '@/config/images';
 
 export default function FAQ() {
   const [openId, setOpenId] = useState<string | null>(faqs[0]?.id ?? null);
@@ -14,7 +15,7 @@ export default function FAQ() {
         badge="FAQ"
         title="Frequently Asked Questions"
         subtitle="Got questions about our lawn care services? Find answers to common questions below, or reach out to us directly."
-        image="https://images.pexels.com/photos/3971211/pexels-photo-3971211.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+        image={pageImages.faq.header}
       />
 
       <section className="py-24 bg-sand-50">

@@ -19,22 +19,25 @@ export const thumb = (id: number) => pexels(id, 'w=800');
 
 export const pageImages = {
   home: { hero: hero(31732617), about: feature(9029162), cta: banner(816198) },
-  about: { header: banner(6794794), team: feature(38936338), area: banner(8143677) },
-  services: { header: banner(38936351) },
-  gallery: { header: banner(26599272) },
-  faq: { header: banner(37720375) },
-  quote: { header: banner(4162016) },
-  contact: { header: banner(38936338) },
+  about: { header: banner(31732617), team: feature(38936338), area: banner(8143677) },
+  services: { header: banner(4162016) },
+  gallery: { header: banner(8143668) },
+  testimonials: { header: banner(18559625) },
+  faq: { header: banner(3971211) },
+  quote: { header: banner(37554739) },
+  contact: { header: banner(4469146) },
 };
 
-/** The first image each route paints. index.html preloads the one matching
- *  the URL being opened, so it downloads alongside the JS bundle. */
-export const entryImages: Record<string, string> = {
-  '/': pageImages.home.hero,
-  '/about': pageImages.about.header,
-  '/services': pageImages.services.header,
-  '/gallery': pageImages.gallery.header,
-  '/faq': pageImages.faq.header,
-  '/quote': pageImages.quote.header,
-  '/contact': pageImages.contact.header,
+/** Every image a route paints before the user can scroll. index.html
+ *  preloads the ones matching the URL being opened, so they all download
+ *  alongside the JS bundle instead of trickling in after React mounts. */
+export const entryImages: Record<string, string[]> = {
+  '/': [pageImages.home.hero, pageImages.home.about],
+  '/about': [pageImages.about.header],
+  '/services': [pageImages.services.header],
+  '/gallery': [pageImages.gallery.header],
+  '/testimonials': [pageImages.testimonials.header],
+  '/faq': [pageImages.faq.header],
+  '/quote': [pageImages.quote.header],
+  '/contact': [pageImages.contact.header],
 };

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, X } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import { galleryItems } from '@/data/gallery';
+import { pageImages } from '@/config/images';
 
 export default function Gallery() {
   const [filter, setFilter] = useState('All');
@@ -18,7 +19,7 @@ export default function Gallery() {
         badge="Project Gallery"
         title="Our Florida Work"
         subtitle="Browse a selection of our lawn care, landscaping, and maintenance projects across Brevard County."
-        image="https://images.pexels.com/photos/8143668/pexels-photo-8143668.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+        image={pageImages.gallery.header}
       />
 
       <section className="py-20 bg-sand-50">

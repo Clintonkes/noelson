@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Sprout, Check, Award, Users, Heart, Truck, ArrowRight, Phone, MapPin } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import { business } from '@/data/business';
+import { pageImages } from '@/config/images';
 
 export default function About() {
   return (
@@ -10,7 +11,7 @@ export default function About() {
         badge="About Noelson"
         title="Florida Born, Brevard Proud"
         subtitle="Meet the team that's been keeping Palm Bay and Brevard County green since 2016."
-        image="https://images.pexels.com/photos/31732617/pexels-photo-31732617.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+        image={pageImages.about.header}
       />
 
       {/* Story */}
