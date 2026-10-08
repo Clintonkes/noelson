@@ -10,7 +10,7 @@ The quote wizard posts to `POST /api/bookings` and the contact form to `POST /ap
 ## Repo & live site
 
 - **Repository:** <https://github.com/Clintonkes/noelson> (install: `git@github.com:Clintonkes/noelson.git`)
-- **Live site (GitHub Pages):** <https://clintonkes.github.io/noelson/>
+- **Live site:** <https://noelsonlawncare.com/> (until DNS is pointed, the default <https://clintonkes.github.io/noelson/> also works)
 
 ## Local development
 
@@ -47,11 +47,22 @@ Checks: `npm run typecheck`, `npm run lint`, `npm run build`.
 2. Actions → "Deploy Frontend to GitHub Pages" → Run workflow (or push to `main`).
 
 The build reads GitHub's Pages configuration, so the base path is handled automatically:
-`/noelson/` on the default `clintonkes.github.io` URL, `/` once a custom domain is set.
+`/noelson/` on the default `clintonkes.github.io` URL, `/` once the
+`noelsonlawncare.com` custom domain is set.
 
-### Custom domain
+### Custom domain (`noelsonlawncare.com`)
 
-Add the domain under Repo → Settings → Pages and point its DNS at GitHub's Pages IPs (`www` as a CNAME to `clintonkes.github.io`). Then:
+The codebase is already wired for it — the `og:` URLs in `index.html` and the
+CORS origins in `backend/main.py` both allow it. What remains is DNS:
 
-1. Re-run the deploy workflow so the build picks up the new base path.
-2. Add the new domain to `CORS_ORIGINS` on Render (e.g. `https://example.com,https://www.example.com`) and update the `og:` URLs in `index.html`.
+1. Point the domain at GitHub Pages: set the `A` record(s) to GitHub's Pages IPs
+   and add `www` as a CNAME to `clintonkes.github.io`.
+2. Under Repo → Settings → Pages, set **Custom domain** to `noelsonlawncare.com`.
+3. Re-run the deploy workflow so the build picks up the new base path.
+
+### Backend wiring
+
+The frontend sends requests to `VITE_API_URL` (see `src/lib/api.ts`). Local dev
+uses `http://localhost:8000`; for the deployed site, set the repo variable
+`VITE_API_URL` to the Render backend URL so the forms on `noelsonlawncare.com`
+reach the API (otherwise CORS/origin requests fall back to `localhost`).

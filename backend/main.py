@@ -30,6 +30,9 @@ origins = [
     # GitHub Pages default URL (the site is served from /noelson there; an
     # origin has no path, so this one entry covers it).
     "https://clintonkes.github.io",
+    # Custom live domain (noelsonlawncare.com).
+    "https://noelsonlawncare.com",
+    "https://www.noelsonlawncare.com",
 ]
 render_url = os.getenv("RENDER_EXTERNAL_URL")
 if render_url:
